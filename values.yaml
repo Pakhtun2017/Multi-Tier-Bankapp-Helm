@@ -1,0 +1,23 @@
+bankapp:
+  replicas: 3
+  image:
+    repository: oolumee/bankapp
+    tag: "6"
+  service:
+    type: LoadBalancer
+    port: 80
+  env:
+    datasourceUrl: jdbc:mysql://mysql-service:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: Test@123
+
+
+mysql:
+  image: mysql:8
+  rootPassword: Test@123
+  database: bankappdb
+
+  service:
+    type: ClusterIP
+    port: 3306
+
