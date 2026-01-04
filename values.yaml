@@ -12,6 +12,13 @@ bankapp:
     password: Test@123
 
 
+  ingress:
+    enabled: true
+    className: nginx
+    host: bankapp.example.com
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      
 mysql:
   image: mysql:8
   rootPassword: Test@123
@@ -20,4 +27,6 @@ mysql:
   service:
     type: ClusterIP
     port: 3306
+
+
 
