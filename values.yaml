@@ -27,3 +27,15 @@ bankapp:
       nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
       nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
 
+mysql:
+  image:
+    repository: mysql
+    tag: "8"
+
+  rootPassword: Test@123
+  database: bankappdb
+
+  service:
+    type: ClusterIP
+    port: 3306
+
