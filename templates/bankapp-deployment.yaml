@@ -26,3 +26,7 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               value: {{ .Values.bankapp.env.password | quote }}
 
+            # 🔥 REQUIRED for Ingress / reverse proxy
+            - name: SERVER_FORWARD_HEADERS_STRATEGY
+              value: framework
+
