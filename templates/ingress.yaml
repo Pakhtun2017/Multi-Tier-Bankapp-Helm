@@ -10,7 +10,8 @@ metadata:
 spec:
   ingressClassName: {{ .Values.bankapp.ingress.className }}
   rules:
-    - host: {{ .Values.bankapp.ingress.host }}
+{{- range .Values.bankapp.ingress.hosts }}
+    - host: {{ . }}
       http:
         paths:
           - path: /
@@ -19,6 +20,7 @@ spec:
               service:
                 name: bankapp-service
                 port:
-                  number: {{ .Values.bankapp.service.port }}
+                  number: {{ $.Values.bankapp.service.port }}
+{{- end }}
 {{- end }}
 
