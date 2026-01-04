@@ -15,7 +15,7 @@ bankapp:
   ingress:
     enabled: true
     className: nginx
-    host: bankapp.example.com
+    host: pashtun-verse.com
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       
