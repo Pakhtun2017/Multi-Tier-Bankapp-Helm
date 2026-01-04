@@ -1,36 +1,29 @@
 bankapp:
   replicas: 4
+
   image:
     repository: oolumee/bankapp
     tag: "2"
+
   service:
     type: ClusterIP
     port: 80
+
   env:
     datasourceUrl: jdbc:mysql://mysql-service:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: Test@123
 
-
   ingress:
     enabled: true
     className: nginx
-    host: www.pashtun-verse.com
+    hosts:
+      - www.pashtun-verse.com
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/affinity: "cookie"
       nginx.ingress.kubernetes.io/affinity-mode: "persistent"
       nginx.ingress.kubernetes.io/session-cookie-name: "INGRESSCOOKIE"
       nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
-      nginx.ingress.kubernetes.io/session-cookie-expires: "172800" 
-mysql:
-  image: mysql:8
-  rootPassword: Test@123
-  database: bankappdb
-
-  service:
-    type: ClusterIP
-    port: 3306
-
-
+      nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
 
