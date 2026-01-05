@@ -30,7 +30,7 @@ bankapp:
 mysql:
   image:
     repository: mysql
-    tag: "8"
+    tag: "2"
 
   rootPassword: Test@123
   database: bankappdb
