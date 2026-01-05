@@ -13,7 +13,14 @@ bankapp:
 
 
 mysql:
+<<<<<<< HEAD
   image: mysql:8
+=======
+  image:
+    repository: mysql
+    tag: "2"
+
+>>>>>>> 5f5803f5b1922409303b411fd5e0c5f227880cd3
   rootPassword: Test@123
   database: bankappdb
 
