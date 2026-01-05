@@ -1,8 +1,8 @@
 bankapp:
-  replicas: 1
+  replicas: 3
   image:
     repository: oolumee/bankapp
-    tag: "1"
+    tag: "6"
   service:
     type: LoadBalancer
     port: 80
@@ -13,14 +13,7 @@ bankapp:
 
 
 mysql:
-<<<<<<< HEAD
   image: mysql:8
-=======
-  image:
-    repository: mysql
-    tag: "2"
-
->>>>>>> 5f5803f5b1922409303b411fd5e0c5f227880cd3
   rootPassword: Test@123
   database: bankappdb
 
