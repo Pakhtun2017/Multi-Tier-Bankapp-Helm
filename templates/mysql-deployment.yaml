@@ -26,4 +26,3 @@ spec:
               value: {{ .Values.mysql.rootPassword | quote }}
             - name: MYSQL_DATABASE
               value: {{ .Values.mysql.database | quote }}
-
