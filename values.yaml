@@ -1,5 +1,5 @@
 bankapp:
-  replicas: 1
+  replicas: 2
   image:
     repository: oolumee/bankapp
     tag: "1"
