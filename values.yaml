@@ -2,7 +2,7 @@ bankapp:
   replicas: 4
   image:
     repository: oolumee/bankapp
-    tag: ""
+    tag: "4"
   service:
     type: LoadBalancer
     port: 80
